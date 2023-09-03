@@ -34,6 +34,7 @@
 
 html {
   font: var(--font-body-lg);
+  color: var(--clr-black-pri);
 }
 
 h1 {

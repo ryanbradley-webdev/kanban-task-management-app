@@ -1,3 +1,4 @@
+import TaskBtn from '../taskBtn/TaskBtn'
 import styles from './column.module.css'
 
 export default function Column({
@@ -9,9 +10,22 @@ export default function Column({
             className={styles.column}
         >
 
-            {name}
+            <h4>
+                {name.toUpperCase()} ({tasks.length})
+            </h4>
 
-            {tasks.length}
+            <div
+                className={styles.tasks}
+            >
+
+                {tasks.length > 0 && tasks.map(task => (
+                    <TaskBtn
+                        key={crypto.randomUUID()}
+                        {...task}
+                    />
+                ))}
+
+            </div>
 
         </section>
     )

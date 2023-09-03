@@ -1,0 +1,22 @@
+.task {
+    text-align: left;
+    padding-inline: 16px;
+    padding-block: 23px;
+    background-color: var(--clr-white-pri);
+    border-radius: var(--radius-element);
+    border: none;
+    box-shadow: 0 4px 6px #364d7d1a;
+}
+
+.task h3 {
+    margin-bottom: 8px;
+}
+
+.task:is(:hover, :focus) h3 {
+    color: var(--clr-purple-700);
+}
+
+.task p {
+    font: var(--font-body-md);
+    color: var(--clr-grey-900);
+}

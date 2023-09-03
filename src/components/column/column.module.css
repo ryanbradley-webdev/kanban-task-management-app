@@ -1,7 +1,16 @@
 .column {
     display: inline;
     width: 280px;
-    height: 100%;
     flex-shrink: 0;
     scroll-snap-align: center;
+}
+
+.column h4 {
+    margin-bottom: 24px;
+    color: var(--clr-grey-900);
+}
+
+.tasks {
+    display: grid;
+    row-gap: 20px;
 }
