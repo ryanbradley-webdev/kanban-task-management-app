@@ -8,9 +8,9 @@
   --clr-grey-500: #2B2C37;
   --clr-grey-300: #20212C;
   --clr-black-pri: #000112;
-  --clr-blue-900: #E4EBFA;
-  --clr-blue-800: #A8A4FF;
-  --clr-blue-700: #635FC7;
+  --clr-purple-900: #E4EBFA;
+  --clr-purple-800: #A8A4FF;
+  --clr-purple-700: #635FC7;
   --clr-red-900: #FF9898;
   --clr-red-800: #EA5555;
   --font-fam: 'Plus Jakarta Sans', Arial, sans-serif;
@@ -21,6 +21,7 @@
   --font-body-lg: 500 13px/23px var(--font-fam);
   --font-body-md: 700 12px/15px var(--font-fam);
   --space-sm: 2.4px;
+  --radius-element: 8px;
 }
 
 *,

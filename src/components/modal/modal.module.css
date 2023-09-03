@@ -1,14 +1,13 @@
-.board_list_container {
+.container {
     position: fixed;
     inset: 0;
     top: 64px;
     background-color: #00000080;
 }
 
-.board_list {
+.modal {
     margin-top: 16px;
     margin-left: 64px;
-    padding-block: 16px;
     width: 264px;
     background-color: var(--clr-white-pri);
     border-radius: var(--radius-element);
