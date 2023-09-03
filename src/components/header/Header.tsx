@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { ThemeContext } from '../../contexts/ThemeContext'
 import styles from './header.module.css'
 import { useMediaQuery } from 'usehooks-ts'
@@ -6,7 +6,7 @@ import MobileLogo from '../../assets/MobileLogo'
 import DarkLogo from '../../assets/DarkLogo'
 import LightLogo from '../../assets/LightLogo'
 import PlusIcon from '../../assets/PlusIcon'
-import EllipsesIcon from '../../assets/EllipsesIcon'
+import EditOptionsModal from '../editOptionsModal/EditOptionsModal'
 
 export default function Header({
     boardListVisible,
@@ -17,13 +17,7 @@ export default function Header({
 }) {
     const { darkTheme } = useContext(ThemeContext)
 
-    const [boardOptionsVisible, setBoardOptionsVisible] = useState(false)
-
     const smallScreen = useMediaQuery('(max-width: 480px)')
-
-    const toggleBoardOptions = () => {
-        setBoardOptionsVisible(!boardOptionsVisible)
-    }
 
     return (
         <header
@@ -47,6 +41,7 @@ export default function Header({
                                 Platform Launch
                             </h2>
                         </button>
+
                     </div>
                 ) : (
                     darkTheme ? (
@@ -69,31 +64,11 @@ export default function Header({
 
                 </button>
 
-                <button
-                    onClick={toggleBoardOptions}
-                >
-
-                    <EllipsesIcon />
-
-                </button>
-
-                {
-                    boardOptionsVisible && (
-                        <div
-                            className={styles.board_options}
-                        >
-
-                            <button>
-                                Edit Board
-                            </button>
-
-                            <button>
-                                Delete Board
-                            </button>
-
-                        </div>
-                    )
-                }
+                <EditOptionsModal
+                    type='Board'
+                    editFn={() => undefined}
+                    deleteFn={() => undefined}
+                />
 
             </div>
 
