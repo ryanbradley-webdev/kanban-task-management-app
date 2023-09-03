@@ -1,3 +1,7 @@
 .header {
     position: sticky;
+    display: flex;
+    align-items: center;
+    height: 64px;
+    padding-inline: 16px;
 }
