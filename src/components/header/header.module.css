@@ -4,4 +4,9 @@
     align-items: center;
     height: 64px;
     padding-inline: 16px;
+    background-color: var(--clr-white-pri);
+}
+
+.header[data-dark-theme='true'] {
+    background-color: var(--clr-black-pri);
 }
