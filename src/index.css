@@ -2,6 +2,25 @@
 
 :root {
   --clr-white-pri: #FFF;
+  --clr-white-sec: #F4F7FD;
+  --clr-grey-900: #828FA3;
+  --clr-grey-700: #3E3F4E;
+  --clr-grey-500: #2B2C37;
+  --clr-grey-300: #20212C;
+  --clr-black-pri: #000112;
+  --clr-blue-900: #E4EBFA;
+  --clr-blue-800: #A8A4FF;
+  --clr-blue-700: #635FC7;
+  --clr-red-900: #FF9898;
+  --clr-red-800: #EA5555;
+  --font-fam: 'Plus Jakarta Sans', Arial, sans-serif;
+  --font-head-xl: 700 24px/30px var(--font-fam);
+  --font-head-lg: 700 18px/23px var(--font-fam);
+  --font-head-md: 700 15px/19px var(--font-fam);
+  --font-head-sm: 700 12px/15px var(--font-fam);
+  --font-body-lg: 500 13px/23px var(--font-fam);
+  --font-body-md: 700 12px/15px var(--font-fam);
+  --space-sm: 2.4px;
 }
 
 *,
@@ -10,4 +29,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  font: var(--font-body-lg);
+}
+
+h1 {
+  font: var(--font-head-xl);
+}
+
+h2 {
+  font: var(--font-head-lg);
+}
+
+h3 {
+  font: var(--font-head-md);
+}
+
+h4 {
+  font: var(--font-head-sm);
 }

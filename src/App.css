@@ -1,0 +1,17 @@
+#root {
+    min-height: 100vh;
+    color: var(--clr-black-pri);
+    background-color: var(--clr-white-sec);
+}
+
+#root.dark {
+    color: var(--clr-white-pri);
+    background-color: var(--clr-grey-300);
+}
+
+@media (prefers-color-scheme: dark) {
+    #root {
+        color: var(--clr-white-pri);
+        background-color: var(--clr-grey-300);
+    }
+}
