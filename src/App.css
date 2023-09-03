@@ -1,5 +1,7 @@
 #root {
     position: relative;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
     color: var(--clr-black-pri);
     background-color: var(--clr-white-sec);

@@ -5,7 +5,7 @@ type ThemeContext = {
 
 type DataContext = {
     boards: Board[]
-    selectedBoard: Board
+    selectedBoard: Board | null
 }
 
 type Subtask = {

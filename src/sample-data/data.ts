@@ -424,5 +424,9 @@ export const SAMPLE_DATA: Board[] = [
         tasks: []
       }
     ]
+  },
+  {
+    name: 'Test',
+    columns: []
   }
 ]
