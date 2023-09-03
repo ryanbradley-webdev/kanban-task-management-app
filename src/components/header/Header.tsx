@@ -5,6 +5,8 @@ import { useMediaQuery } from 'usehooks-ts'
 import MobileLogo from '../../assets/MobileLogo'
 import DarkLogo from '../../assets/DarkLogo'
 import LightLogo from '../../assets/LightLogo'
+import PlusIcon from '../../assets/PlusIcon'
+import EllipsesIcon from '../../assets/EllipsesIcon'
 
 export default function Header({
     boardListVisible,
@@ -48,6 +50,26 @@ export default function Header({
                     )
                 )
             }
+
+            <div
+                className={styles.options_container}
+            >
+
+                <button>
+
+                    <PlusIcon />
+
+                    {!smallScreen && 'Add New Task'}
+
+                </button>
+
+                <button>
+
+                    <EllipsesIcon />
+
+                </button>
+
+            </div>
 
         </header>
     )
