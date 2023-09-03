@@ -1,4 +1,5 @@
 #root {
+    position: relative;
     min-height: 100vh;
     color: var(--clr-black-pri);
     background-color: var(--clr-white-sec);
