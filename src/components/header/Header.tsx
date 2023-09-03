@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { ThemeContext } from '../../contexts/ThemeContext'
 import styles from './header.module.css'
 import { useMediaQuery } from 'usehooks-ts'
@@ -17,7 +17,13 @@ export default function Header({
 }) {
     const { darkTheme } = useContext(ThemeContext)
 
+    const [boardOptionsVisible, setBoardOptionsVisible] = useState(false)
+
     const smallScreen = useMediaQuery('(max-width: 480px)')
+
+    const toggleBoardOptions = () => {
+        setBoardOptionsVisible(!boardOptionsVisible)
+    }
 
     return (
         <header
@@ -63,11 +69,31 @@ export default function Header({
 
                 </button>
 
-                <button>
+                <button
+                    onClick={toggleBoardOptions}
+                >
 
                     <EllipsesIcon />
 
                 </button>
+
+                {
+                    boardOptionsVisible && (
+                        <div
+                            className={styles.board_options}
+                        >
+
+                            <button>
+                                Edit Board
+                            </button>
+
+                            <button>
+                                Delete Board
+                            </button>
+
+                        </div>
+                    )
+                }
 
             </div>
 
