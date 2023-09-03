@@ -8,8 +8,8 @@ export default function DataProvider({
 }: {
     children: ReactNode
 }) {
-    const [boards, setBoards] = useState(SAMPLE_DATA)
-    const [selectedBoard, setSelectedBoard] = useState(SAMPLE_DATA[0])
+    const [boards] = useState(SAMPLE_DATA)
+    const [selectedBoard] = useState(SAMPLE_DATA[0])
 
     const value = {
         boards,
