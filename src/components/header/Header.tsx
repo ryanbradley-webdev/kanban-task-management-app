@@ -1,9 +1,15 @@
 import { useContext } from 'react'
 import { ThemeContext } from '../../contexts/ThemeContext'
 import styles from './header.module.css'
+import { useMediaQuery } from 'usehooks-ts'
+import MobileLogo from '../../assets/MobileLogo'
+import DarkLogo from '../../assets/DarkLogo'
+import LightLogo from '../../assets/LightLogo'
 
 export default function Header() {
     const { darkTheme } = useContext(ThemeContext)
+
+    const smallScreen = useMediaQuery('(max-width: 480px)')
 
     return (
         <header
@@ -11,13 +17,17 @@ export default function Header() {
             data-dark-theme={darkTheme}
         >
 
-            <svg width="24" height="25" xmlns="http://www.w3.org/2000/svg">
-                <g fill="#635FC7" fillRule="evenodd">
-                    <rect width="6" height="25" rx="2"/>
-                    <rect opacity=".75" x="9" width="6" height="25" rx="2"/>
-                    <rect opacity=".5" x="18" width="6" height="25" rx="2"/>
-                </g>
-            </svg>
+            {
+                smallScreen ? (
+                    <MobileLogo />
+                ) : (
+                    darkTheme ? (
+                        <DarkLogo />
+                    ) : (
+                        <LightLogo />
+                    )
+                )
+            }
 
         </header>
     )
