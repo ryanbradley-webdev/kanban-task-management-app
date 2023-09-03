@@ -13,3 +13,25 @@
 .header[data-dark-theme='true'] {
     background-color: var(--clr-black-pri);
 }
+
+.mobile_head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.list_control_btn {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    border: none;
+    background-color: transparent;
+}
+
+.list_control_btn::after {
+    content: url(/icon-chevron.svg);
+}
+
+.list_control_btn[data-list-visible='true']::after {
+    rotate: 180deg;
+}

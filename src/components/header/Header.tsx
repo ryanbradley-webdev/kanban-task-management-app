@@ -6,7 +6,13 @@ import MobileLogo from '../../assets/MobileLogo'
 import DarkLogo from '../../assets/DarkLogo'
 import LightLogo from '../../assets/LightLogo'
 
-export default function Header() {
+export default function Header({
+    boardListVisible,
+    toggleBoardList
+}: {
+    boardListVisible: boolean
+    toggleBoardList: () => void
+}) {
     const { darkTheme } = useContext(ThemeContext)
 
     const smallScreen = useMediaQuery('(max-width: 480px)')
@@ -19,7 +25,21 @@ export default function Header() {
 
             {
                 smallScreen ? (
-                    <MobileLogo />
+                    <div
+                        className={styles.mobile_head}
+                    >
+                        <MobileLogo />
+
+                        <button
+                            onClick={toggleBoardList}
+                            data-list-visible={boardListVisible}
+                            className={styles.list_control_btn}
+                        >
+                            <h2>
+                                Platform Launch
+                            </h2>
+                        </button>
+                    </div>
                 ) : (
                     darkTheme ? (
                         <DarkLogo />
