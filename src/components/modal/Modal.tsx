@@ -4,10 +4,12 @@ import DeleteIcon from '../../assets/DeleteIcon'
 
 export default function Modal({
     children,
-    closeModal
+    closeModal,
+    className
 }: {
     children: ReactNode
     closeModal: () => void
+    className: string
 }) {
     return (
         <div
@@ -15,10 +17,11 @@ export default function Modal({
         >
 
             <div
-                className={styles.modal}
+                className={styles.modal + ' ' + className}
             >
                 <button
                     onClick={closeModal}
+                    className={styles.close_btn}
                 >
                     <DeleteIcon />
                 </button>

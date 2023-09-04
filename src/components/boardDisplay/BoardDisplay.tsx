@@ -53,6 +53,7 @@ export default function BoardDisplay() {
             {selectedTask && (
                 <Modal
                     closeModal={() => setSelectedTask(undefined)}
+                    className={styles.modal}
                 >
 
                     <div>
@@ -73,11 +74,11 @@ export default function BoardDisplay() {
                         {selectedTask.description}
                     </p>
 
-                    <strong>
-                        Subtasks ({selectedTask.subtasks.filter(subtask => subtask.isCompleted).length} of {selectedTask.subtasks.length})
-                    </strong>
-
                     <div>
+
+                        <strong>
+                            Subtasks ({selectedTask.subtasks.filter(subtask => subtask.isCompleted).length} of {selectedTask.subtasks.length})
+                        </strong>
 
                         {selectedTask.subtasks.map(subtask => (
                             <Checkbox

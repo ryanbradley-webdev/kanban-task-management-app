@@ -8,8 +8,24 @@
 }
 
 .modal {
+    position: relative;
     padding: 24px;
+    padding-top: 32px;
     width: 90%;
     background-color: var(--clr-white-pri);
     border-radius: var(--radius-element);
+}
+
+.close_btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    width: fit-content;
+    background-color: transparent;
+    border: none;
+}
+
+.close_btn > svg {
+    fill: var(--clr-grey-900);
 }

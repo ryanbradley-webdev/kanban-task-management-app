@@ -13,3 +13,34 @@
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
 }
+
+.modal {
+    display: grid;
+    row-gap: 24px;
+}
+
+.modal > div:first-of-type {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal > div:not(:first-child) {
+    display: grid;
+    row-gap: 8px;
+}
+
+.modal p,
+.modal strong {
+    color: var(--clr-grey-900);
+}
+
+.modal strong {
+    font-size: 12px;
+}
+
+.modal div:nth-of-type(2) strong {
+    margin-bottom: 8px;
+}
