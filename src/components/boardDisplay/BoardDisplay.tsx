@@ -84,6 +84,16 @@ export default function BoardDisplay() {
                         {selectedTask.subtasks.map(subtask => (
                             <Checkbox
                                 key={crypto.randomUUID()}
+                                onChange={newSubtask => setSelectedTask({
+                                    ...selectedTask,
+                                    subtasks: selectedTask.subtasks.map(subtask => {
+                                        if (subtask.title === newSubtask.title) {
+                                            return newSubtask
+                                        }
+
+                                        return subtask
+                                    })
+                                })}
                                 {...subtask}
                             />
                         ))}

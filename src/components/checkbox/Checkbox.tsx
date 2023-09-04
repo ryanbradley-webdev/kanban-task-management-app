@@ -2,8 +2,18 @@ import styles from './checkbox.module.css'
 
 export default function Checkbox({
     title,
-    isCompleted
-}: Subtask) {
+    isCompleted,
+    onChange
+}: Subtask & {
+    onChange: (subtask: Subtask) => void
+}) {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        onChange({
+            title,
+            isCompleted: e.target.checked
+        })
+    }
+
     return (
         <label
             className={styles.checkbox_container}
@@ -12,6 +22,7 @@ export default function Checkbox({
             <input
                 type="checkbox"
                 checked={isCompleted}
+                onChange={handleChange}
             />
 
             <span>
