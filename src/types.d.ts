@@ -6,6 +6,7 @@ type ThemeContext = {
 type DataContext = {
     boards: Board[]
     selectedBoard: Board | null
+    selectNewBoard: (id: string) => void
 }
 
 type Subtask = {
@@ -26,6 +27,7 @@ type Column = {
 }
 
 type Board = {
+    id: string
     name: string
     columns: Column[]
   }

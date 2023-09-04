@@ -9,11 +9,20 @@ export default function DataProvider({
     children: ReactNode
 }) {
     const [boards] = useState(SAMPLE_DATA)
-    const [selectedBoard] = useState(SAMPLE_DATA[0])
+    const [selectedBoard, setSelectedBoard] = useState(SAMPLE_DATA[0])
+
+    const selectNewBoard = (id: string) => {
+        const targetBoard = boards.find(board => board.id = id)
+
+        if (targetBoard) {
+            setSelectedBoard(targetBoard)
+        }
+    }
 
     const value = {
         boards,
-        selectedBoard
+        selectedBoard,
+        selectNewBoard
     }
 
     return (

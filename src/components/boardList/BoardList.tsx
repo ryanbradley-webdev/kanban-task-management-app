@@ -1,10 +1,14 @@
-import { useState } from 'react'
+import { useContext } from 'react'
 import styles from './boardList.module.css'
 import ThemeToggle from '../themeToggle/ThemeToggle'
 import BoardIcon from '../../assets/BoardIcon'
+import { DataContext } from '../../contexts/DataContext'
 
 export default function BoardList() {
-    const [boards] = useState(['Platform Launch', 'Marketing Plan', 'Roadmap'])
+    const {
+        boards,
+        selectedBoard
+    } = useContext(DataContext)
 
     return (
         <nav
@@ -16,32 +20,45 @@ export default function BoardList() {
             >
                 
                 <h4>
-                    ALL BOARDS (3)
+                    ALL BOARDS ({boards.length})
                 </h4>
 
                 <ul
                     className={styles.items}
                 >
 
-                    {boards.length > 0 && boards.map((board, idx) => (
+                    {boards.length > 0 && boards.map(board => (
                         <li
-                            key={idx}
-                            data-selected={idx === 1}
+                            key={board.id}
                         >
-                            <BoardIcon />
 
-                            <span>
-                                {board}
-                            </span>
+                            <button
+                                data-selected={selectedBoard?.id === board.id}
+                            >
+
+                                <BoardIcon />
+
+                                <span>
+                                    {board.name}
+                                </span>
+
+                            </button>
+
                         </li>
                     ))}
 
                     <li>
-                        <BoardIcon />
 
-                        <span>
-                            &#43; Create New Board
-                        </span>
+                        <button>
+
+                            <BoardIcon />
+
+                            <span>
+                                &#43; Create New Board
+                            </span>
+
+                        </button>
+
                     </li>
 
                 </ul>
