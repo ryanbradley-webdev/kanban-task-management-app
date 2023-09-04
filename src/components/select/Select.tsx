@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import ChevronIcon from '../../assets/ChevronIcon'
 import styles from './select.module.css'
 
 export default function Select({
@@ -57,8 +56,6 @@ export default function Select({
                     </div>
                 )
             }
-
-            <ChevronIcon />
 
         </div>
     )

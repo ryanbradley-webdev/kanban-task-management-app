@@ -29,12 +29,16 @@
     background-color: transparent;
 }
 
-.list_control_btn::after {
-    content: url(/icon-chevron.svg);
-}
+@media screen and (max-width: 480px) {
+    .list_control_btn::after {
+        content: url(/icon-chevron.svg);
+        transform-origin: center;
+    }
 
-.list_control_btn[data-list-visible='true']::after {
-    rotate: 180deg;
+    .list_control_btn[data-list-visible='true']::after {
+        rotate: 180deg;
+        transform: translateY(-3px);
+    }
 }
 
 .options_container {

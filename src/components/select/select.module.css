@@ -18,13 +18,14 @@
     border-color: var(--clr-purple-700);
 }
 
-.select_container svg {
+.select_container::after {
+    content: url(/icon-chevron.svg);
     position: absolute;
-    top: 17px;
+    top: 10px;
     right: 16px;
 }
 
-.select_container:has(.option_container) svg {
+.select_container:has(.option_container)::after {
     rotate: 180deg;
 }
 
