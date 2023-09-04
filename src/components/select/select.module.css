@@ -14,6 +14,10 @@
     font: var(--font-body-lg);
 }
 
+.select:is(:hover, :focus) {
+    border-color: var(--clr-purple-700);
+}
+
 .select_container svg {
     position: absolute;
     top: 17px;
@@ -26,4 +30,21 @@
 
 .option_container {
     position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    display: grid;
+    padding-block: 8px;
+    border-radius: var(--radius-element);
+    background-color: var(--clr-white-pri);
+}
+
+.option {
+    background-color: transparent;
+    border: none;
+    padding-inline: 16px;
+    padding-block: 4px;
+    font: var(--font-body-lg);
+    color: var(--clr-grey-900);
+    text-align: left;
 }
