@@ -20,7 +20,7 @@
     width: 16px;
     height: 16px;
     background-color: var(--clr-white-pri);
-    border: 1px solid #818ea240;
+    border: 1px solid var(--clr-grey-border);
     border-radius: 2px;
 }
 

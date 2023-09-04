@@ -1,0 +1,29 @@
+.select_container {
+    position: relative;
+}
+
+.select {
+    appearance: none;
+    height: 40px;
+    width: 100%;
+    padding-inline: 16px;
+    background-color: var(--clr-white-pri);
+    border: 1px solid var(--clr-grey-border);
+    border-radius: 4px;
+    text-align: left;
+    font: var(--font-body-lg);
+}
+
+.select_container svg {
+    position: absolute;
+    top: 17px;
+    right: 16px;
+}
+
+.select_container:has(.option_container) svg {
+    rotate: 180deg;
+}
+
+.option_container {
+    position: absolute;
+}

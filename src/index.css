@@ -7,6 +7,7 @@
   --clr-grey-700: #3E3F4E;
   --clr-grey-500: #2B2C37;
   --clr-grey-300: #20212C;
+  --clr-grey-border: #818EA240;
   --clr-black-pri: #000112;
   --clr-purple-900: #E4EBFA;
   --clr-purple-800: #A8A4FF;
@@ -51,4 +52,9 @@ h3 {
 
 h4 {
   font: var(--font-head-sm);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
 }

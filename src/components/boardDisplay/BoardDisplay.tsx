@@ -5,6 +5,7 @@ import Column from '../column/Column'
 import Modal from '../modal/Modal'
 import EditOptionsModal from '../editOptionsModal/EditOptionsModal'
 import Checkbox from '../checkbox/Checkbox'
+import Select from '../select/Select'
 
 export default function BoardDisplay() {
     const {
@@ -95,17 +96,14 @@ export default function BoardDisplay() {
                             Current Status
                         </strong>
 
-                        <select
+                        <Select
                             value={selectedTask.status}
-                            onChange={e => setSelectedTask({
+                            onChange={newStatus => setSelectedTask({
                                 ...selectedTask,
-                                status: e.target.value
+                                status: newStatus
                             })}
-                        >
-                            <option value="Todo">Todo</option>
-                            <option value="Doing">Doing</option>
-                            <option value="Done">Done</option>
-                        </select>
+                            options={selectedBoard?.columns.map(column => column.name)}
+                        />
 
                     </div>
 
