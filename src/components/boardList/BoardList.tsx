@@ -4,11 +4,22 @@ import ThemeToggle from '../themeToggle/ThemeToggle'
 import BoardIcon from '../../assets/BoardIcon'
 import { DataContext } from '../../contexts/DataContext'
 
-export default function BoardList() {
+export default function BoardList({
+    toggleBoardList
+}: {
+    toggleBoardList: () => void
+}) {
     const {
         boards,
-        selectedBoard
+        selectedBoard,
+        selectNewBoard
     } = useContext(DataContext)
+
+    const handleClick = (id: string) => {
+        selectNewBoard(id)
+
+        toggleBoardList()
+    }
 
     return (
         <nav
@@ -34,6 +45,7 @@ export default function BoardList() {
 
                             <button
                                 data-selected={selectedBoard?.id === board.id}
+                                onClick={() => handleClick(board.id)}
                             >
 
                                 <BoardIcon />

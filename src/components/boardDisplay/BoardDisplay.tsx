@@ -20,21 +20,7 @@ export default function BoardDisplay() {
         >
 
             {
-                selectedBoard ? (
-                    <div
-                        className={styles.column_carousel}
-                    >
-
-                        {selectedBoard.columns.map(column => (
-                            <Column
-                                key={crypto.randomUUID()}
-                                setSelectedTask={setSelectedTask}
-                                {...column}
-                            />
-                        ))}
-
-                    </div>
-                ) : (
+                (!selectedBoard || selectedBoard.columns.length === 0) ? (
                     <div>
 
                         <h2>
@@ -48,6 +34,20 @@ export default function BoardDisplay() {
                         </button>
 
                     </div>
+                ) : (
+                    <div
+                    className={styles.column_carousel}
+                >
+
+                    {selectedBoard.columns.map(column => (
+                        <Column
+                            key={crypto.randomUUID()}
+                            setSelectedTask={setSelectedTask}
+                            {...column}
+                        />
+                    ))}
+
+                </div>
                 )
             }
 

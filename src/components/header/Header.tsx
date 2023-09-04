@@ -7,6 +7,7 @@ import DarkLogo from '../../assets/DarkLogo'
 import LightLogo from '../../assets/LightLogo'
 import PlusIcon from '../../assets/PlusIcon'
 import EditOptionsModal from '../editOptionsModal/EditOptionsModal'
+import { DataContext } from '../../contexts/DataContext'
 
 export default function Header({
     boardListVisible,
@@ -15,6 +16,10 @@ export default function Header({
     boardListVisible: boolean
     toggleBoardList: () => void
 }) {
+    const {
+        selectedBoard
+    } = useContext(DataContext)
+
     const { darkTheme } = useContext(ThemeContext)
 
     const smallScreen = useMediaQuery('(max-width: 480px)')
@@ -37,9 +42,11 @@ export default function Header({
                             data-list-visible={boardListVisible}
                             className={styles.list_control_btn}
                         >
+
                             <h2>
-                                Platform Launch
+                                {selectedBoard?.name}
                             </h2>
+
                         </button>
 
                     </div>

@@ -12,7 +12,7 @@ export default function DataProvider({
     const [selectedBoard, setSelectedBoard] = useState(SAMPLE_DATA[0])
 
     const selectNewBoard = (id: string) => {
-        const targetBoard = boards.find(board => board.id = id)
+        const targetBoard = boards.find(board => board.id === id)
 
         if (targetBoard) {
             setSelectedBoard(targetBoard)

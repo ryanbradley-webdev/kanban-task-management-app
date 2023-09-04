@@ -19,7 +19,11 @@ function App() {
         toggleBoardList={toggleBoardList}
       />
     
-      {boardListVisible && <BoardList />}
+      {boardListVisible && (
+        <BoardList
+          toggleBoardList={toggleBoardList}
+        />
+      )}
 
       <BoardDisplay />
     

@@ -1,6 +1,6 @@
 export const SAMPLE_DATA: Board[] = [
   {
-    id: '0',
+    id: '1234',
     name: "Platform Launch",
     columns: [
       {
@@ -284,7 +284,7 @@ export const SAMPLE_DATA: Board[] = [
     ]
   },
   {
-    id: '1',
+    id: '2345',
     name: "Marketing Plan",
     columns: [
       {
@@ -376,7 +376,7 @@ export const SAMPLE_DATA: Board[] = [
     ]
   },
   {
-    id: '2',
+    id: '3456',
     name: "Roadmap",
     columns: [
       {
@@ -429,7 +429,7 @@ export const SAMPLE_DATA: Board[] = [
     ]
   },
   {
-    id: '3',
+    id: '4567',
     name: 'Test',
     columns: []
   }
