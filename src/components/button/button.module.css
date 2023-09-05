@@ -1,0 +1,9 @@
+.button {
+    padding-inline: 17px;
+    height: 48px;
+    color: var(--clr-white-pri);
+    font: var(--font-head-md);
+    background-color: var(--clr-purple-700);
+    border: none;
+    border-radius: 48px;
+}

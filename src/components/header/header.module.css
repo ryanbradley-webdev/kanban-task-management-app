@@ -12,7 +12,7 @@
 }
 
 .header[data-dark-theme='true'] {
-    background-color: var(--clr-black-pri);
+    background-color: var(--clr-grey-500);
 }
 
 .mobile_head {

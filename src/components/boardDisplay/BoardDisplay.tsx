@@ -6,6 +6,7 @@ import Modal from '../modal/Modal'
 import EditOptionsModal from '../editOptionsModal/EditOptionsModal'
 import Checkbox from '../checkbox/Checkbox'
 import Select from '../select/Select'
+import Button from '../button/Button'
 
 export default function BoardDisplay() {
     const {
@@ -29,11 +30,13 @@ export default function BoardDisplay() {
                             This board is empty. Create a new column to get started.
                         </h2>
 
-                        <button>
+                        <Button
+                            onClick={() => undefined}
+                        >
 
                             &#43; Add New Column
 
-                        </button>
+                        </Button>
 
                     </div>
                 ) : (
