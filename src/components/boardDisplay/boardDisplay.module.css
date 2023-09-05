@@ -1,10 +1,17 @@
 .main {
+    display: flex;
+    flex-direction: column;
     min-height: calc(100vh - 64px);
     overflow-y: scroll;
 }
 
-.column_carousel {
+.column_carousel,
+.empty {
     display: flex;
+    flex-grow: 1;
+}
+
+.column_carousel {
     gap: 24px;
     padding-block: 24px;
     padding-inline: 16px;
@@ -43,4 +50,15 @@
 
 .modal div:nth-of-type(2) strong {
     margin-bottom: 8px;
+}
+
+.empty {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    height: 100%;
+    padding-inline: 16px;
+    text-align: center;
+    color: var(--clr-grey-900);
 }

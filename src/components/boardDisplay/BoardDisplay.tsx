@@ -21,7 +21,9 @@ export default function BoardDisplay() {
 
             {
                 (!selectedBoard || selectedBoard.columns.length === 0) ? (
-                    <div>
+                    <div
+                        className={styles.empty}
+                    >
 
                         <h2>
                             This board is empty. Create a new column to get started.
@@ -36,18 +38,18 @@ export default function BoardDisplay() {
                     </div>
                 ) : (
                     <div
-                    className={styles.column_carousel}
-                >
+                        className={styles.column_carousel}
+                    >
 
-                    {selectedBoard.columns.map(column => (
-                        <Column
-                            key={crypto.randomUUID()}
-                            setSelectedTask={setSelectedTask}
-                            {...column}
-                        />
-                    ))}
+                        {selectedBoard.columns.map(column => (
+                            <Column
+                                key={crypto.randomUUID()}
+                                setSelectedTask={setSelectedTask}
+                                {...column}
+                            />
+                        ))}
 
-                </div>
+                    </div>
                 )
             }
 

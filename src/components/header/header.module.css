@@ -60,6 +60,10 @@
     border-radius: 48px;
 }
 
+.options_container > button:first-child:disabled {
+    opacity: 0.25;
+}
+
 .options_container > button:first-child svg {
     fill: var(--clr-white-pri);
 }

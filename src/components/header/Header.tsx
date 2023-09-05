@@ -63,7 +63,9 @@ export default function Header({
                 className={styles.options_container}
             >
 
-                <button>
+                <button
+                    disabled={selectedBoard?.columns.length === 0}
+                >
 
                     <PlusIcon />
 
