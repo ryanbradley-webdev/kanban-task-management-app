@@ -1,7 +1,7 @@
 import styles from './button.module.css'
 
 interface ButtonProps extends React.HtmlHTMLAttributes<HTMLButtonElement> {
-    onClick: () => void
+    onClick?: () => void
     type?: 'button' | 'submit'
     disabled?: boolean
 }

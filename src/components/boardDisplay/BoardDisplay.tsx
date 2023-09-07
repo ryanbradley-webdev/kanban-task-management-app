@@ -7,6 +7,7 @@ import EditOptionsModal from '../editOptionsModal/EditOptionsModal'
 import Checkbox from '../checkbox/Checkbox'
 import Select from '../select/Select'
 import Button from '../button/Button'
+import EditTask from './modals/EditTask'
 
 export default function BoardDisplay() {
     const {
@@ -14,6 +15,7 @@ export default function BoardDisplay() {
     } = useContext(DataContext)
 
     const [selectedTask, setSelectedTask] = useState<Task | undefined>()
+    const [editingTask, setEditingTask] = useState(false)
 
     return (
         <main
@@ -56,7 +58,7 @@ export default function BoardDisplay() {
                 )
             }
 
-            {selectedTask && (
+            {(selectedTask && !editingTask) && (
                 <Modal
                     closeModal={() => setSelectedTask(undefined)}
                     className={styles.modal}
@@ -70,7 +72,7 @@ export default function BoardDisplay() {
 
                         <EditOptionsModal
                             type='Task'
-                            editFn={() => undefined}
+                            editFn={() => setEditingTask(true)}
                             deleteFn={() => undefined}
                         />
 
@@ -121,6 +123,17 @@ export default function BoardDisplay() {
                         />
 
                     </div>
+
+                </Modal>
+            )}
+
+            {editingTask && (
+                <Modal
+                    closeModal={() => setEditingTask(false)}
+                    className={styles.edit_task_modal}
+                >
+
+                    <EditTask />
 
                 </Modal>
             )}
