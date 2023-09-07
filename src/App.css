@@ -11,10 +11,3 @@
     color: var(--clr-white-pri);
     background-color: var(--clr-grey-300);
 }
-
-@media (prefers-color-scheme: dark) {
-    #root {
-        color: var(--clr-white-pri);
-        background-color: var(--clr-grey-300);
-    }
-}
