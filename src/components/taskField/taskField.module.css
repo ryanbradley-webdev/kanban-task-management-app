@@ -1,0 +1,15 @@
+.field {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.field input {
+    flex-grow: 1;
+}
+
+.field svg {
+    fill: var(--clr-grey-900);
+}

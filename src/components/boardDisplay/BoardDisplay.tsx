@@ -130,7 +130,7 @@ export default function BoardDisplay() {
             {editingTask && (
                 <Modal
                     closeModal={() => setEditingTask(false)}
-                    className={styles.edit_task_modal}
+                    className={styles.modal}
                 >
 
                     <EditTask />

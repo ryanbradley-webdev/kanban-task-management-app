@@ -1,9 +1,13 @@
 import Button from "../../button/Button"
 import Select from "../../select/Select"
+import TaskField from "../../taskField/TaskField"
+import styles from './modals.module.css'
 
 export default function EditTask() {
     return (
-        <form>
+        <form
+            className={styles.form}
+        >
 
             <h2>
                 Add New Task
@@ -37,6 +41,26 @@ export default function EditTask() {
                 ></textarea>
 
             </label>
+
+            <div
+                className={styles.subtask_list}
+            >
+
+                <strong>
+                    Subtasks
+                </strong>
+
+                <TaskField />
+
+                <TaskField />
+
+                <Button
+                    type="button"
+                >
+                    &#43; Add New Subtask
+                </Button>
+
+            </div>
 
             <div>
 

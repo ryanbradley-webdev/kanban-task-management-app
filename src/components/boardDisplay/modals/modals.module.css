@@ -1,0 +1,17 @@
+.form,
+.form > label,
+.subtask_list {
+    display: grid;
+}
+
+.form {
+    row-gap: 24px;
+}
+
+.form > label {
+    row-gap: 8px;
+}
+
+.subtask_list strong {
+    margin-bottom: 8px;
+}
