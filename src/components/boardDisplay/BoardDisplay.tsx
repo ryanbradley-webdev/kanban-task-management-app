@@ -3,11 +3,9 @@ import { DataContext } from '../../contexts/DataContext'
 import styles from './boardDisplay.module.css'
 import Column from '../column/Column'
 import Modal from '../modal/Modal'
-import EditOptionsModal from '../editOptionsModal/EditOptionsModal'
-import Checkbox from '../checkbox/Checkbox'
-import Select from '../select/Select'
 import Button from '../button/Button'
 import EditTask from './modals/EditTask'
+import ViewTask from './modals/ViewTask'
 
 export default function BoardDisplay() {
     const {
@@ -64,65 +62,12 @@ export default function BoardDisplay() {
                     className={styles.modal}
                 >
 
-                    <div>
-
-                        <h2>
-                            {selectedTask.title}
-                        </h2>
-
-                        <EditOptionsModal
-                            type='Task'
-                            editFn={() => setEditingTask(true)}
-                            deleteFn={() => undefined}
-                        />
-
-                    </div>
-
-                    <p>
-                        {selectedTask.description}
-                    </p>
-
-                    <div>
-
-                        <strong>
-                            Subtasks ({selectedTask.subtasks.filter(subtask => subtask.isCompleted).length} of {selectedTask.subtasks.length})
-                        </strong>
-
-                        {selectedTask.subtasks.map(subtask => (
-                            <Checkbox
-                                key={crypto.randomUUID()}
-                                onChange={newSubtask => setSelectedTask({
-                                    ...selectedTask,
-                                    subtasks: selectedTask.subtasks.map(subtask => {
-                                        if (subtask.title === newSubtask.title) {
-                                            return newSubtask
-                                        }
-
-                                        return subtask
-                                    })
-                                })}
-                                {...subtask}
-                            />
-                        ))}
-
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Current Status
-                        </strong>
-
-                        <Select
-                            value={selectedTask.status}
-                            onChange={newStatus => setSelectedTask({
-                                ...selectedTask,
-                                status: newStatus
-                            })}
-                            options={selectedBoard?.columns.map(column => column.name)}
-                        />
-
-                    </div>
+                    <ViewTask
+                        task={selectedTask}
+                        board={selectedBoard}
+                        setSelectedTask={setSelectedTask}
+                        setEditingTask={setEditingTask}
+                    />
 
                 </Modal>
             )}
