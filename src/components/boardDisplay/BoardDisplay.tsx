@@ -78,7 +78,9 @@ export default function BoardDisplay() {
                     className={styles.modal}
                 >
 
-                    <EditTask />
+                    <EditTask
+                        task={selectedTask}
+                    />
 
                 </Modal>
             )}

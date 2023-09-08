@@ -3,7 +3,11 @@ import Select from "../../select/Select"
 import TaskField from "../../taskField/TaskField"
 import styles from './modals.module.css'
 
-export default function EditTask() {
+export default function EditTask({
+    task
+}: {
+    task: Task | undefined
+}) {
     return (
         <form
             className={styles.form}
@@ -24,6 +28,7 @@ export default function EditTask() {
                     id="title"
                     name="title"
                     placeholder="e.g. Take coffee break"
+                    value={task?.title}
                 />
 
             </label>
@@ -38,6 +43,7 @@ export default function EditTask() {
                     id="description"
                     name="description"
                     placeholder="e.g. It's always good to take a break. This 15 minute break will recharge the batteries a little."
+                    value={task?.description}
                 ></textarea>
 
             </label>
@@ -50,9 +56,12 @@ export default function EditTask() {
                     Subtasks
                 </strong>
 
-                <TaskField />
-
-                <TaskField />
+                {/* {task.subtasks.map(subtask => {
+                    <TaskField
+                        key={crypto.randomUUID()}
+                        value={subtask.title}
+                    />
+                })} */}
 
                 <Button
                     type="button"
