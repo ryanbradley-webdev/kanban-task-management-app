@@ -6,6 +6,7 @@ import Modal from '../modal/Modal'
 import Button from '../button/Button'
 import EditTask from './modals/EditTask'
 import ViewTask from './modals/ViewTask'
+import EditBoard from './modals/EditBoard'
 
 export default function BoardDisplay() {
     const {
@@ -14,6 +15,7 @@ export default function BoardDisplay() {
 
     const [selectedTask, setSelectedTask] = useState<Task | undefined>()
     const [editingTask, setEditingTask] = useState(false)
+    const [editingBoard, setEditingBoard] = useState(false)
 
     return (
         <main
@@ -31,7 +33,7 @@ export default function BoardDisplay() {
                         </h2>
 
                         <Button
-                            onClick={() => undefined}
+                            onClick={() => setEditingBoard(true)}
                         >
 
                             &#43; Add New Column
@@ -80,6 +82,19 @@ export default function BoardDisplay() {
 
                     <EditTask
                         task={selectedTask}
+                    />
+
+                </Modal>
+            )}
+
+            {editingBoard && (
+                <Modal
+                    closeModal={() => setEditingBoard(false)}
+                    className={styles.modal}
+                >
+
+                    <EditBoard
+                        
                     />
 
                 </Modal>

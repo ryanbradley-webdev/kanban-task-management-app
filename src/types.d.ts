@@ -7,6 +7,7 @@ type DataContext = {
     boards: Board[]
     selectedBoard: Board | null
     selectNewBoard: (id: string) => void
+    addColumn: () => void
 }
 
 type Subtask = {

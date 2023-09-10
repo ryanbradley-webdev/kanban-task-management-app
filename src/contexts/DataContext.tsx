@@ -19,10 +19,26 @@ export default function DataProvider({
         }
     }
 
+    const addColumn = () => {
+        const newColumn: Column = {
+            name: '',
+            tasks: []
+        }
+
+        setSelectedBoard({
+            ...selectedBoard,
+            columns: [
+                ...selectedBoard.columns,
+                newColumn
+            ]
+        })
+    }
+
     const value = {
         boards,
         selectedBoard,
-        selectNewBoard
+        selectNewBoard,
+        addColumn
     }
 
     return (
