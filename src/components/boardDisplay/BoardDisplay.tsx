@@ -26,6 +26,10 @@ export default function BoardDisplay() {
         }
     }
 
+    const handleUpdateTask = (newTask: Task) => {
+        setSelectedTask(newTask)
+    }
+
     return (
         <main
             className={styles.main}
@@ -92,6 +96,7 @@ export default function BoardDisplay() {
                     <EditTask
                         task={selectedTask}
                         updateSubtasks={handleUpdateSubtasks}
+                        updateTask={handleUpdateTask}
                     />
 
                 </Modal>

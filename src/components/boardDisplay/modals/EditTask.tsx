@@ -5,10 +5,12 @@ import styles from './modals.module.css'
 
 export default function EditTask({
     task,
-    updateSubtasks
+    updateSubtasks,
+    updateTask
 }: {
     task: Task | undefined
     updateSubtasks: (newSubtasks: Subtask[]) => void
+    updateTask: (newTask: Task) => void
 }) {
     const handleUpdateSubtask = (newSubtask: Subtask) => {
         if (task) {
@@ -41,6 +43,37 @@ export default function EditTask({
         }
     }
 
+    const handleUpdateTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (task) {
+            const { value } = e.target
+
+            updateTask({
+                ...task,
+                title: value
+            })
+        }
+    }
+
+    const handleUpdateDescription = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        if (task) {
+            const { value } = e.target
+
+            updateTask({
+                ...task,
+                description: value
+            })
+        }
+    }
+
+    const handleUpdateStatus = (newStatus: string) => {
+        if (task) {
+            updateTask({
+                ...task,
+                status: newStatus
+            })
+        }
+    }
+
     return (
         <form
             className={styles.form}
@@ -62,6 +95,7 @@ export default function EditTask({
                     name="title"
                     placeholder="e.g. Take coffee break"
                     value={task?.title}
+                    onChange={handleUpdateTitle}
                 />
 
             </label>
@@ -77,6 +111,7 @@ export default function EditTask({
                     name="description"
                     placeholder="e.g. It's always good to take a break. This 15 minute break will recharge the batteries a little."
                     value={task?.description}
+                    onChange={handleUpdateDescription}
                 ></textarea>
 
             </label>
@@ -115,7 +150,7 @@ export default function EditTask({
 
                 <Select
                     value={'Todo'}
-                    onChange={() => undefined}
+                    onChange={handleUpdateStatus}
                     options={['Todo', 'Doing', 'Done']}
                 />
 
