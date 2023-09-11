@@ -18,7 +18,7 @@ export default function ViewTask({
         setSelectedTask({
             ...task,
             subtasks: task.subtasks.map(subtask => {
-                if (subtask.title === newSubtask.title) {
+                if (subtask.id === newSubtask.id) {
                     return newSubtask
                 }
 

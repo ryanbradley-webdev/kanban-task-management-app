@@ -11,8 +11,6 @@ export default function TaskField({
     updateSubtask: (newSubtask: Subtask) => void
     deleteSubtask: (id: string) => void
 }) {
-    console.log(id)
-
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = e.target
 
