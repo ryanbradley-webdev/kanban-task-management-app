@@ -22,6 +22,25 @@ export default function EditTask({
         }
     }
 
+    const handleAddSubtask = () => {
+        if (task) {
+            updateSubtasks([
+                ...task.subtasks,
+                {
+                    id: crypto.randomUUID(),
+                    title: '',
+                    isCompleted: false
+                }
+            ])
+        }
+    }
+
+    const handleDeleteSubtask = (id: string) => {
+        if (task) {
+            updateSubtasks(task.subtasks.filter(subtask => subtask.id !== id))
+        }
+    }
+
     return (
         <form
             className={styles.form}
@@ -75,11 +94,13 @@ export default function EditTask({
                         key={subtask.id}
                         {...subtask}
                         updateSubtask={handleUpdateSubtask}
+                        deleteSubtask={handleDeleteSubtask}
                     />
                 ))}
 
                 <Button
                     type="button"
+                    onClick={handleAddSubtask}
                 >
                     &#43; Add New Subtask
                 </Button>

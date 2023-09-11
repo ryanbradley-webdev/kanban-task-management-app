@@ -13,3 +13,10 @@
 .field svg {
     fill: var(--clr-grey-900);
 }
+
+.delete_btn {
+    height: fit-content;
+    width: fit-content;
+    background-color: transparent;
+    border: none;
+}

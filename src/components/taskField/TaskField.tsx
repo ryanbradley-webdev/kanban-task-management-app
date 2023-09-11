@@ -5,9 +5,11 @@ export default function TaskField({
     id,
     isCompleted,
     title,
-    updateSubtask
+    updateSubtask,
+    deleteSubtask
 }: Subtask & {
     updateSubtask: (newSubtask: Subtask) => void
+    deleteSubtask: (id: string) => void
 }) {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = e.target
@@ -31,7 +33,14 @@ export default function TaskField({
                 onChange={handleChange}
             />
 
-            <DeleteIcon />
+            <button
+                onClick={() => deleteSubtask(id)}
+                className={styles.delete_btn}
+            >
+
+                <DeleteIcon />
+
+            </button>
 
         </label>
     )
