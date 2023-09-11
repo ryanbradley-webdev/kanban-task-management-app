@@ -2,10 +2,23 @@ import DeleteIcon from "../../assets/DeleteIcon"
 import styles from './taskField.module.css'
 
 export default function TaskField({
-    value
-}: {
-    value: string
+    id,
+    isCompleted,
+    title,
+    updateSubtask
+}: Subtask & {
+    updateSubtask: (newSubtask: Subtask) => void
 }) {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { value } = e.target
+
+        updateSubtask({
+            id,
+            isCompleted,
+            title: value
+        })
+    }
+
     return (
         <label
             className={styles.field}
@@ -14,7 +27,8 @@ export default function TaskField({
             <input
                 type="text"
                 placeholder='e.g. Make coffee'
-                value={value}
+                value={title}
+                onChange={handleChange}
             />
 
             <DeleteIcon />

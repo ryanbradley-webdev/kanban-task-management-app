@@ -4,10 +4,24 @@ import TaskField from "../../taskField/TaskField"
 import styles from './modals.module.css'
 
 export default function EditTask({
-    task
+    task,
+    updateSubtasks
 }: {
     task: Task | undefined
+    updateSubtasks: (newSubtasks: Subtask[]) => void
 }) {
+    const handleUpdateSubtask = (newSubtask: Subtask) => {
+        if (task) {
+            updateSubtasks(task.subtasks.map(subtask => {
+                if (subtask.id === newSubtask.id) {
+                    return newSubtask
+                }
+
+                return subtask
+            }))
+        }
+    }
+
     return (
         <form
             className={styles.form}
@@ -56,12 +70,13 @@ export default function EditTask({
                     Subtasks
                 </strong>
 
-                {/* {task.subtasks.map(subtask => {
+                {task?.subtasks.map(subtask => (
                     <TaskField
-                        key={crypto.randomUUID()}
-                        value={subtask.title}
+                        key={subtask.id}
+                        {...subtask}
+                        updateSubtask={handleUpdateSubtask}
                     />
-                })} */}
+                ))}
 
                 <Button
                     type="button"

@@ -17,6 +17,15 @@ export default function BoardDisplay() {
     const [editingTask, setEditingTask] = useState(false)
     const [editingBoard, setEditingBoard] = useState(false)
 
+    const handleUpdateSubtasks = (newSubtasks: Subtask[]) => {
+        if (selectedTask) {
+            setSelectedTask({
+                ...selectedTask,
+                subtasks: newSubtasks
+            })
+        }
+    }
+
     return (
         <main
             className={styles.main}
@@ -82,6 +91,7 @@ export default function BoardDisplay() {
 
                     <EditTask
                         task={selectedTask}
+                        updateSubtasks={handleUpdateSubtasks}
                     />
 
                 </Modal>
