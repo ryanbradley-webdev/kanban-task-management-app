@@ -67,6 +67,15 @@ export default function BoardDisplay() {
                             />
                         ))}
 
+                        <button
+                            className={styles.new_column_btn}
+                            onClick={() => setEditingBoard(true)}
+                        >
+
+                            &#43; New Column
+
+                        </button>
+
                     </div>
                 )
             }

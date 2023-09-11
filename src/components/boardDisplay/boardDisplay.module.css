@@ -21,6 +21,18 @@
     scroll-behavior: smooth;
 }
 
+.new_column_btn {
+    height: calc(100vh - 100px);
+    width: 280px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    background: linear-gradient(to bottom, #E9EFFA, #e9effa88);
+    border: none;
+    border-radius: 6px;
+    font: var(--font-head-xl);
+    color: var(--clr-grey-900);
+}
+
 .modal {
     display: grid;
     row-gap: 24px;
